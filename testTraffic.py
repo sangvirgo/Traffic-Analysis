@@ -6,7 +6,7 @@ import cv2
 model = YOLO('yolov8n.pt')
 
 # Khởi tạo capture video từ file video
-cap = cv2.VideoCapture('traffic.mp4')  # Thay bằng đường dẫn tới video của bạn
+cap = cv2.VideoCapture('testui/traffic.mp4')  # Thay bằng đường dẫn tới video của bạn
 
 # Thiết lập kích thước khung hình
 cap.set(3, 640)
