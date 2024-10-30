@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Local/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Local/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Local/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/tempCodeRunnerFile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yolov8n.pt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +256,7 @@
       <workItem from="1730255429006" duration="1761000" />
       <workItem from="1730257341847" duration="5734000" />
       <workItem from="1730275736747" duration="710000" />
-      <workItem from="1730276496036" duration="1705000" />
+      <workItem from="1730276496036" duration="5389000" />
     </task>
     <servers />
   </component>
@@ -273,8 +269,8 @@
     <SUITE FILE_PATH="coverage/py_traffic$MainTestUITraffic.coverage" NAME="MainTestUITraffic Coverage Results" MODIFIED="1729501385930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testui" />
     <SUITE FILE_PATH="coverage/py_traffic$Create_API.coverage" NAME="Create API Coverage Results" MODIFIED="1729502045208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
     <SUITE FILE_PATH="coverage/py_traffic$test.coverage" NAME="test Coverage Results" MODIFIED="1729502390858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
-    <SUITE FILE_PATH="coverage/py_traffic$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1730277726154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
-    <SUITE FILE_PATH="coverage/py_traffic$detect.coverage" NAME="detect Coverage Results" MODIFIED="1730260561924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
+    <SUITE FILE_PATH="coverage/py_traffic$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1730282683395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
+    <SUITE FILE_PATH="coverage/py_traffic$detect.coverage" NAME="detect Coverage Results" MODIFIED="1730279129247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
     <SUITE FILE_PATH="coverage/py_traffic$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1729751877330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
     <SUITE FILE_PATH="coverage/py_traffic$testTraffic.coverage" NAME="testTraffic Coverage Results" MODIFIED="1729394560628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/py_traffic$main_1.coverage" NAME="main_1 Coverage Results" MODIFIED="1729393880892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test api" />

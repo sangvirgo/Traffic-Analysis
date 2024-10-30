@@ -1,3 +1,4 @@
+import os
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 from easyocr import Reader
@@ -19,21 +20,44 @@ import pathlib
 9: bien so xe
 
 """
+output_folder = "Image_result"
+os.makedirs(output_folder, exist_ok=True)
+
+
 pathlib.PosixPath = pathlib.WindowsPath
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt',
-                       force_reload=True)
-
-""" luu lai bien so vi pham trong file vipham.txt """
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=True)
 
 
-def save_vipham(bienso, kieuvp):
-    with open('vipham.txt', 'a') as logf:
-        logf.write(f'Bien so:{bienso}, vi pham: {kieuvp}\n')
+def save_violation_bbox(original_image, bbox, violation_id):
+    """
+    Lưu ảnh bounding box của xe vi phạm.
+
+    Parameters:
+    - original_image: Ảnh gốc dạng PIL Image
+    - bbox: Tọa độ bounding box (x_min, y_min, x_max, y_max)
+    - violation_id: ID hoặc số thứ tự của xe vi phạm để tên file ảnh là duy nhất
+    """
+    x_min, y_min, x_max, y_max = bbox
+
+    # Cắt ảnh từ bounding box
+    cropped_image = original_image.crop((x_min, y_min, x_max, y_max))
+
+    # Đường dẫn file ảnh cho xe vi phạm
+    image_path = os.path.join(output_folder, f"violation_{violation_id}.jpg")
+
+    # Lưu ảnh
+    cropped_image.save(image_path)
+    print(f"Đã phát hiện lỗi ---- của xe vi phạm và lưu vào {image_path}")
+
+
+
 
 
 """Định dạng biển số"""
 
-
+def save_vipham(bienso, kieuvp):
+    with open('vipham.txt', 'a') as logf:
+        logf.write(f'Bien so:{bienso}, vi pham: {kieuvp}\n')
 def formattedBienSo(bienso):
     return bienso.strip()  # Trả về biển số đã nhận diện
 
