@@ -5,6 +5,7 @@ import cv2
 import re
 import torch
 import pathlib
+
 """
 0: xe may
 1: o to
@@ -19,23 +20,30 @@ import pathlib
 
 """
 pathlib.PosixPath = pathlib.WindowsPath
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='C:\\Traffic-Analysis\\Version Local\\best.pt', force_reload=True)
-
-
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt',
+                       force_reload=True)
 
 """ luu lai bien so vi pham trong file vipham.txt """
+
+
 def save_vipham(bienso, kieuvp):
     with open('vipham.txt', 'a') as logf:
         logf.write(f'Bien so:{bienso}, vi pham: {kieuvp}\n')
 
+
 """Định dạng biển số"""
+
+
 def formattedBienSo(bienso):
     return bienso.strip()  # Trả về biển số đã nhận diện
 
+
 """ doc bien so tu frame """
+
+
 def docBienSo(frame):
     img = cv2.resize(frame, (800, 600))
-    grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)   #chuyen sang mau xam cho toi uu
+    grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # chuyen sang mau xam cho toi uu
     blurred = cv2.GaussianBlur(grayscale, (5, 5), 0)
     edged = cv2.Canny(blurred, 10, 200)
 
@@ -63,7 +71,10 @@ def docBienSo(frame):
             return formattedBienSo(detection[0][1])  # Trả về biển số đã nhận diện
     return None
 
+
 """ vuot den do """
+
+
 def check_vuotdendo(frame, rs):
     dendo = False
     vachke = None
@@ -73,31 +84,41 @@ def check_vuotdendo(frame, rs):
             dendo = True
         if int(det[-1]) == 7:
             x1, y1, x2, y2 = map(int, det[:4])
-            vachke = (y1 + y2) // 2         #vi hinh anh theo chieu ngang(nen lay y thay vi x)
+            vachke = (y1 + y2) // 2  # vi hinh anh theo chieu ngang(nen lay y thay vi x)
         if int(det[-1]) in [0, 1, 2, 3]:
             x1, y1, x2, y2 = map(int, det[:4])
-            vehicles.append((y1 + y2) // 2)     #toa do trung tam cua cac xe
+            vehicles.append((y1 + y2) // 2)  # toa do trung tam cua cac xe
 
     if dendo and vachke is not None:
         for v in vehicles:
-            if v >= vachke:         #camera thuong o dang sau, nen >=
+            if v >= vachke:  # camera thuong o dang sau, nen >=
                 return True
     return False
 
+
 """ ko doi mu bao hiem """
+
+
 def check_mubh(frame, rs):
     for det in rs.xyxy[0]:
         if int(det[-1]) == 5:
-            return True  
+            return True
     return False
 
+
 """ boc dau"""
+
+
 def bocdau(frame, rs):
     for det in rs.xyxy[0]:
         if int(det[-1]) == 8:
             return True
     return False
+
+
 """ xuat ra loi vi pham """
+
+
 def xuatloi(frame):
     results = model(frame)  # Sử dụng mô hình để dự đoán
 
@@ -129,7 +150,7 @@ def xuatloi(frame):
                 text = f'{bienso} - {kieuvp}'
                 cv2.putText(frame, text, (midx, topy), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                 break
-    
+
     return frame
-    
-#print(model.names)      #kiem tra xem model co hoat dong
+
+# print(model.names)      #kiem tra xem model co hoat dong

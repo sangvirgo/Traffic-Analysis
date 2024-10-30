@@ -1,8 +1,11 @@
 import sys
 from PyQt5 import QtWidgets, QtGui, QtCore
-from trafficUI import Ui_MainWindow  
-from detect import xuatloi  
+from trafficUI import Ui_MainWindow
+from detect import xuatloi
 import cv2
+from PyQt5.QtGui import QImage, QPixmap, QIcon
+from PyQt5.QtWidgets import QListWidgetItem
+
 
 class MainApp(QtWidgets.QMainWindow):
     def __init__(self):
@@ -16,7 +19,7 @@ class MainApp(QtWidgets.QMainWindow):
         # Cài đặt timer để lấy frame từ video
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_frame)
-        self.timer.start(30)  # Cập nhật mỗi 30ms
+        self.timer.start(0)  # Cập nhật mỗi 30ms
 
         # Đường dẫn video cho các địa điểm khác nhau
         self.video_paths = {
@@ -39,7 +42,7 @@ class MainApp(QtWidgets.QMainWindow):
 
         if location in self.video_paths:
             self.cap = cv2.VideoCapture(self.video_paths[location])
-            self.timer.start(30)
+            self.timer.start(0)
 
     def update_frame(self):
         # Đọc một frame từ video
