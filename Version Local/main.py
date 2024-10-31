@@ -19,7 +19,7 @@ class MainApp(QtWidgets.QMainWindow):
         # Cài đặt timer để lấy frame từ video
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_frame)
-        self.timer.start(0)  # Cập nhật mỗi 30ms
+        self.timer.start(1)  # Cập nhật mỗi 30ms
 
         # Đường dẫn video cho các địa điểm khác nhau
         self.video_paths = {
@@ -42,7 +42,7 @@ class MainApp(QtWidgets.QMainWindow):
 
         if location in self.video_paths:
             self.cap = cv2.VideoCapture(self.video_paths[location])
-            self.timer.start(0)
+            self.timer.start(1)
 
     def update_frame(self):
         # Đọc một frame từ video
