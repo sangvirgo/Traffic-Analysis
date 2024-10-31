@@ -7,7 +7,6 @@ import cv2
 import re
 import torch
 import pathlib
-
 # Thiết lập các kiểu phương tiện và vi phạm
 """
 0: xe may
@@ -24,6 +23,7 @@ import pathlib
 
 output_folder = "Image_result"
 os.makedirs(output_folder, exist_ok=True)
+
 
 try:
     pathlib.PosixPath = pathlib.WindowsPath
@@ -146,49 +146,41 @@ def bocdau(frame, rs):
     return False
 
 
-def xuatloi(frame):
+def xuatloi(frame, main_app):
     try:
         results = model(frame)
 
         if check_vuotdendo(frame, results):
             bienso = docBienSo(frame)
             if bienso is not None:
-                temp=bienso+" - vuot den do"
+                temp = bienso + " - vượt đèn đỏ"
                 for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-            else:
-                for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), "vuot den do")
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} và lưu lại.")
 
         if check_mubh(frame, results):
             bienso = docBienSo(frame)
             if bienso is not None:
-                temp=bienso+" - khong doi mu bao hiem"
+                temp = bienso + " - không đội mũ bảo hiểm"
                 for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-            else:
-                for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), "khong doi mu bao hiem")
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} và lưu lại.")
 
         if bocdau(frame, results):
             bienso = docBienSo(frame)
             if bienso is not None:
-                temp=bienso+" - boc dau"
+                temp = bienso + " - bốc đầu"
                 for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-            else:
-                for det in results.xyxy[0]:
-                        x1, y1, x2, y2 = map(int, det[:4])
-                        save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), "boc dau")
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} và lưu lại.")
 
     except Exception as e:
-        print(f"Lỗi khi xuất lỗi vi phạm: {e}")
+        main_app.log_message(f"Lỗi khi xuất lỗi vi phạm: {e}")
     return frame
+
 
 try:
     print(model.names)  # Kiểm tra model có hoạt động

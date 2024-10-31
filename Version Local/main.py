@@ -6,7 +6,6 @@ import cv2
 from PyQt5.QtGui import QImage, QPixmap, QIcon
 from PyQt5.QtWidgets import QListWidgetItem
 
-
 class MainApp(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainApp, self).__init__()
@@ -55,7 +54,7 @@ class MainApp(QtWidgets.QMainWindow):
             self.timer.stop()
             return
 
-        img = xuatloi(img)   # xu li tung khung hinh
+        img = xuatloi(img, self)   # xu li tung khung hinh
 
         # Chuyển đổi frame thành định dạng QImage để hiển thị trên QLabel
         img_resized = cv2.resize(img, (791, 571))  # Kích thước phù hợp với QLabel
@@ -64,6 +63,10 @@ class MainApp(QtWidgets.QMainWindow):
         bytes_per_line = ch * w
         qt_img = QtGui.QImage(img_rgb.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
         self.ui.videoLabel.setPixmap(QtGui.QPixmap.fromImage(qt_img))
+
+    def log_message(self, mes):
+        self.ui.listWidget.addItem(mes)
+        self.ui.listWidget.scrollToBottom()
 
     def closeEvent(self, event):
         # Khi đóng cửa sổ, giải phóng tài nguyên
