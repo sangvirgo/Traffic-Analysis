@@ -1,7 +1,8 @@
-torch
-opencv-python
-numpy
+uuid
 Pillow
+numpy
 easyocr
-ultralytics
-PyQt5
+opencv-python
+torch
+pathlib
+PyQt5==5.15.11
