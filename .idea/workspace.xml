@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version API/Create API.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version API/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version API/trafficUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version API/trafficUI.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/trafficUI.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version API/yolov8n.pt" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/yolov8n.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/custom_stream.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/trafficUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/trafficUI.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Local/yolov8n.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/Image_result/violation_235210_01112024/235210_01112024.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/yolov8n.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yolov5" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,35 +51,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Create API.executor": "Run",
-    "Python.MainTestUITraffic.executor": "Run",
-    "Python.Test.executor": "Run",
-    "Python.detect.executor": "Run",
-    "Python.hihi.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main (2).executor": "Run",
-    "Python.main (3).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.main_1.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.testMain.executor": "Run",
-    "Python.testTraffic.executor": "Run",
-    "Python.test_1.executor": "Run",
-    "Python.trafficUI.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "son",
-    "last_opened_file_path": "D:/py traffic/Version API",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Create API.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MainTestUITraffic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.detect (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.detect.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hihi.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (3).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testMain.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testTraffic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.trafficUI.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;son&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/py traffic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\py traffic\Version API" />
@@ -95,7 +91,30 @@
       <recent name="D:\py traffic\testui\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (3)">
+  <component name="RunManager" selected="Python.detect (1)">
+    <configuration name="detect (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py traffic" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Main File" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main File/detect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="detect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py traffic" />
       <option name="ENV_FILES" value="" />
@@ -111,29 +130,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Version Local/detect.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py traffic" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Version API" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Version API/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -213,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.detect (1)" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.trafficUI" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.detect" />
-        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +270,19 @@
       <workItem from="1730362640313" duration="9547000" />
       <workItem from="1730379214097" duration="1682000" />
       <workItem from="1730391650178" duration="3801000" />
-      <workItem from="1730474395468" duration="5384000" />
+      <workItem from="1730474395468" duration="8339000" />
+      <workItem from="1730519137110" duration="140000" />
+      <workItem from="1730519944736" duration="1444000" />
+      <workItem from="1730532769798" duration="7862000" />
+      <workItem from="1730554795329" duration="578000" />
+      <workItem from="1730555475650" duration="91000" />
+      <workItem from="1730555850716" duration="353000" />
+      <workItem from="1730556623287" duration="1907000" />
+      <workItem from="1730608650227" duration="4838000" />
+      <workItem from="1730613563169" duration="732000" />
+      <workItem from="1730614312080" duration="3575000" />
+      <workItem from="1730617953429" duration="963000" />
+      <workItem from="1730619319715" duration="9726000" />
     </task>
     <servers />
   </component>
@@ -292,10 +300,11 @@
     <SUITE FILE_PATH="coverage/py_traffic$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1729751877330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
     <SUITE FILE_PATH="coverage/py_traffic$trafficUI.coverage" NAME="trafficUI Coverage Results" MODIFIED="1730475747722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$testTraffic.coverage" NAME="testTraffic Coverage Results" MODIFIED="1729394560628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/py_traffic$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1730479850810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
+    <SUITE FILE_PATH="coverage/py_traffic$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1730623003486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$main_1.coverage" NAME="main_1 Coverage Results" MODIFIED="1729393880892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test api" />
     <SUITE FILE_PATH="coverage/py_traffic$main.coverage" NAME="main Coverage Results" MODIFIED="1729395093494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test api" />
     <SUITE FILE_PATH="coverage/py_traffic$testMain.coverage" NAME="testMain Coverage Results" MODIFIED="1729416199947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testui" />
+    <SUITE FILE_PATH="coverage/py_traffic$detect__1_.coverage" NAME="detect (1) Coverage Results" MODIFIED="1730624756791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$hihi.coverage" NAME="hihi Coverage Results" MODIFIED="1729394129616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

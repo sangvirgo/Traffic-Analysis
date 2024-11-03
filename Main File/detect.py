@@ -1,13 +1,11 @@
+import uuid
 from datetime import datetime
 import os
-from PIL import ImageFont, ImageDraw, Image
-import numpy as np
+from PIL import Image
 from easyocr import Reader
 import cv2
-import re
 import torch
 import pathlib
-# Thiết lập các kiểu phương tiện và vi phạm
 """
 0: xe may
 1: o to
@@ -19,45 +17,24 @@ import pathlib
 7: vach ke duong(vach dung)
 8: boc dau
 9: bien so xe
+10: nguoi di bo
 """
 
 output_folder = "Image_result"
 os.makedirs(output_folder, exist_ok=True)
-now = datetime.now()
 
 try:
+    """thiet lap duong dan cho pathlib neu khong phai la windows"""
     pathlib.PosixPath = pathlib.WindowsPath
 except Exception as e:
     print(f"Lỗi khi thiết lập pathlib: {e}")
 
 try:
+    """truyen vao custom model(yolov5) best.pt bang load cuar torch.hub"""
     model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=True)
 except Exception as e:
     print(f"Lỗi khi tải mô hình YOLOv5: {e}")
-
-
-def save_violation_bbox(original_image, bbox, name_violation):
-    try:
-        violation_id = now.strftime("%H%M%S_%d%m%Y")
-
-        x_min, y_min, x_max, y_max = bbox
-
-        # Cắt ảnh từ bounding box
-        cropped_image = original_image.crop((x_min, y_min, x_max, y_max))
-
-        # Đường dẫn file ảnh cho xe vi phạm
-        image_folder = os.path.join(output_folder, f"violation_{violation_id}")
-        os.makedirs(image_folder, exist_ok=True)  # Tạo thư mục nếu chưa tồn tại
-
-        image_path = os.path.join(image_folder, f"{violation_id}.jpg")
-
-        # Lưu ảnh
-        cropped_image.save(image_path)
-        print(f"Đã phát hiện lỗi {name_violation} của xe vi phạm và lưu vào {image_path}")
-    except Exception as e:
-        print(f"Lỗi khi lưu ảnh vi phạm: {e}")
-
-
+reader = Reader(['en'], gpu=False)
 
 def formattedBienSo(bienso):
     return bienso.strip()
@@ -65,66 +42,65 @@ def formattedBienSo(bienso):
 
 def docBienSo(frame):
     try:
-        img = cv2.resize(frame, (800, 600))
-        grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        blurred = cv2.GaussianBlur(grayscale, (5, 5), 0)
-        edged = cv2.Canny(blurred, 10, 200)
+        img_resized = cv2.resize(frame, (800, 600))
+        grayscale = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
 
-        contours, _ = cv2.findContours(edged, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours = sorted(contours, key=cv2.contourArea, reverse=True)[:5]
+        grayscale = cv2.GaussianBlur(grayscale, (5, 5), 0)
 
-        number_plate_shape = None
-        for c in contours:
-            perimeter = cv2.arcLength(c, True)
-            approximation = cv2.approxPolyDP(c, 0.02 * perimeter, True)
-            if len(approximation) == 4:  # rectangle
-                number_plate_shape = approximation
-                break
+        contrast_enhanced = cv2.convertScaleAbs(grayscale, alpha=1.5, beta=0)
 
-        if number_plate_shape is not None:
-            (x, y, w, h) = cv2.boundingRect(number_plate_shape)
-            number_plate = grayscale[y:y + h, x:x + w]
+        _, thresh = cv2.threshold(contrast_enhanced, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
-            try:
-                reader = Reader(['vi'])
-                detection = reader.readtext(number_plate)
+        result = reader.readtext(thresh, detail=0)
 
-                if len(detection) == 0:
-                    return None
-                else:
-                    return formattedBienSo(detection[0][1])
-            except Exception as e:
-                print(f"Lỗi khi nhận diện biển số: {e}")
-                return None
+        bien_so_text = ' '.join(result)
+        return bien_so_text.strip() if bien_so_text else None
     except Exception as e:
-        print(f"Lỗi khi xử lý biển số từ khung hình: {e}")
-    return None
+        print(f"Lỗi khi đọc biển số: {e}")
+        return None
+
+def save_violation_bbox(original_image, bbox, name_violation):
+    try:
+        violation_id = f"{datetime.now().strftime('%H%M%S%f_%d%m%Y')}_{uuid.uuid4()}"
+        # vd: 142126282513_03112024_1bba7d07-29d6-4d61-ab5b-0ab8c8746607.jpg
+        x_min, y_min, x_max, y_max = bbox
+
+        cropped_image = original_image.crop((x_min, y_min, x_max, y_max))
+
+        image_path = os.path.join(output_folder, f"{violation_id}.jpg")
+
+        cropped_image.save(image_path)
+        print(f"Đã phát hiện lỗi {name_violation} của xe vi phạm và lưu vào {image_path}")
+    except Exception as e:
+        print(f"Lỗi khi lưu ảnh vi phạm: {e}")
 
 
+
+"""kiem tra vuot den do"""
 def check_vuotdendo(frame, rs):
     try:
         dendo = False
         vachke = None
         vehicles = []
-        for det in rs.xyxy[0]:
-            if int(det[-1]) == 6:
+        for det in rs.xyxy[0]:   #duyet tung doi tuong duoc detect [x1, y1, x2, y2, cfd, clsid]
+            if int(det[-1]) == 6:   #lay doi tuong tuong ung voi label = 6 (dendo)
                 dendo = True
             if int(det[-1]) == 7:
-                x1, y1, x2, y2 = map(int, det[:4])
-                vachke = (y1 + y2) // 2
+                x1, y1, x2, y2 = map(int, det[:4])      #lay bouding box cua vat the(vach dung)
+                vachke = (y1 + y2) // 2            #vi hinh anh la dang chieu ngang nen tinh toan theo y
             if int(det[-1]) in [0, 1, 2, 3]:
                 x1, y1, x2, y2 = map(int, det[:4])
                 vehicles.append((y1 + y2) // 2)
 
         if dendo and vachke is not None:
             for v in vehicles:
-                if v >= vachke:
+                if v >= vachke:         #vi camera chieu tu dang sau nen y tang tu tren xuong duoi, nen >= se vi pham
                     return True
     except Exception as e:
         print(f"Lỗi khi kiểm tra vượt đèn đỏ: {e}")
     return False
 
-
+"""kiem tra khong doi mu bao hiem"""
 def check_mubh(frame, rs):
     try:
         for det in rs.xyxy[0]:
@@ -134,7 +110,7 @@ def check_mubh(frame, rs):
         print(f"Lỗi khi kiểm tra không đội mũ bảo hiểm: {e}")
     return False
 
-
+"""kiem tra boc dau"""
 def bocdau(frame, rs):
     try:
         for det in rs.xyxy[0]:
@@ -151,14 +127,19 @@ def xuatloi(frame, main_app):
 
         if check_vuotdendo(frame, results):
             bienso = docBienSo(frame)
+
             if bienso is None:
                 bienso = ""
             temp = bienso + " vượt đèn đỏ"
             for det in results.xyxy[0]:
-                x1, y1, x2, y2 = map(int, det[:4])
-                save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-                tm = now.strftime("%H:%M:%S")
-                main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                if int(det[-1]) in [0, 1, 2, 3]:
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    now = datetime.now()
+                    tm = now.strftime("%H:%M:%S")
+                    # vd: 20:21:36
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                    # Đã phát hiện lỗi vuot den do vào lúc 20:21:36
 
         if check_mubh(frame, results):
             bienso = docBienSo(frame)
@@ -166,10 +147,12 @@ def xuatloi(frame, main_app):
                 bienso = ""
             temp = bienso + " không đội mũ bảo hiểm"
             for det in results.xyxy[0]:
-                x1, y1, x2, y2 = map(int, det[:4])
-                save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-                tm = now.strftime("%H:%M:%S")
-                main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                if int(det[-1]) == 5:
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    now = datetime.now()
+                    tm = now.strftime("%H:%M:%S")
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
 
         if bocdau(frame, results):
             bienso = docBienSo(frame)
@@ -177,10 +160,12 @@ def xuatloi(frame, main_app):
                 bienso = ""
             temp = bienso + " bốc đầu"
             for det in results.xyxy[0]:
-                x1, y1, x2, y2 = map(int, det[:4])
-                save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
-                tm = now.strftime("%H:%M:%S")
-                main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                if int(det[-1]) == 8:
+                    x1, y1, x2, y2 = map(int, det[:4])
+                    save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
+                    now = datetime.now()
+                    tm = now.strftime("%H:%M:%S")
+                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
 
     except Exception as e:
         main_app.log_message(f"Lỗi khi xuất lỗi vi phạm: {e}")
@@ -188,6 +173,6 @@ def xuatloi(frame, main_app):
 
 
 try:
-    print(model.names)  # Kiểm tra model có hoạt động
+    print(model.names)  #kiem thu xem model co hoat dong dung khong voi viec in ra cac class
 except Exception as e:
     print(f"Lỗi khi kiểm tra model.names: {e}")

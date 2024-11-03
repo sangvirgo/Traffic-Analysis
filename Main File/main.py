@@ -12,16 +12,13 @@ class MainApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # Khởi tạo video và timer
         self.cap = cv2.VideoCapture('../uploads/Le Van Viet.mp4')
-
 
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_frame)
-        self.frame_skip = 0  # Sử dụng frame_skip để kiểm soát số khung hình bỏ qua
-        self.timer.start(10)  # 30 FPS
+        self.frame_skip = 0
+        self.timer.start(10)
 
-        # Đường dẫn video cho các địa điểm khác nhau
         self.video_paths = {
             "Lê Văn Việt": "../uploads/Le Van Viet.mp4",
             "Võ Văn Ngân": "../uploads/Vo Van Ngan.mp4",
@@ -30,11 +27,10 @@ class MainApp(QtWidgets.QMainWindow):
             "Võ Chí Công": "../uploads/Vo Chi Cong.mp4",
         }
 
-        # Xử lý khi chọn vị trí từ combobox
         self.ui.locationComboBox.currentIndexChanged.connect(self.on_location_changed)
+        self.last_message = ""
 
     def on_location_changed(self):
-        # Khi thay đổi địa điểm, dừng video hiện tại và chuyển sang video mới
         if self.cap:
             self.cap.release()
             self.timer.stop()
@@ -53,12 +49,11 @@ class MainApp(QtWidgets.QMainWindow):
             self.timer.stop()
             return
 
-        # Chỉ xử lý mỗi giây một khung hình
         if self.frame_skip % 10 == 0:
-            img = cv2.resize(img, (680, 500)) # Giảm độ phân giải
-            img = xuatloi(img, self)  # Hàm xử lý khung hình vi phạm
+            img = cv2.resize(img, (680, 500))
+            img = xuatloi(img, self)
 
-            # Chuyển đổi khung hình để hiển thị
+            # chuyen sang dinh dang rgb va display
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             qt_img = QtGui.QImage(img_rgb.data, img_rgb.shape[1], img_rgb.shape[0], QtGui.QImage.Format_RGB888)
             self.ui.videoLabel.setPixmap(QtGui.QPixmap.fromImage(qt_img))
@@ -66,11 +61,12 @@ class MainApp(QtWidgets.QMainWindow):
         self.frame_skip += 1
 
     def log_message(self, mes):
-        self.ui.listWidget.addItem(mes)
-        self.ui.listWidget.scrollToBottom()
+        if mes != self.last_message:
+            self.ui.listWidget.addItem(mes)
+            self.ui.listWidget.scrollToBottom()
+            self.last_message = mes
 
     def closeEvent(self, event):
-        # Khi đóng cửa sổ, giải phóng tài nguyên
         self.cap.release()
         cv2.destroyAllWindows()
         event.accept()
