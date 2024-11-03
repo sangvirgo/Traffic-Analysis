@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/Image_result/violation_235210_01112024/235210_01112024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/yolov8n.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yolov5" beforeDir="false" />
-    </list>
+    <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -283,6 +274,7 @@
       <workItem from="1730614312080" duration="3575000" />
       <workItem from="1730617953429" duration="963000" />
       <workItem from="1730619319715" duration="9726000" />
+      <workItem from="1730630211212" duration="62000" />
     </task>
     <servers />
   </component>
