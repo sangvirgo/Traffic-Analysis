@@ -1,7 +1,8 @@
 torch
 opencv-python
+uuid
+pillow
 numpy
-Pillow
 easyocr
-ultralytics
-PyQt5
+pathlib
+pyqt5==5.15.11
