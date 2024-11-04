@@ -31,7 +31,8 @@ except Exception as e:
 
 try:
     """truyen vao custom model(yolov5) best.pt bang load cuar torch.hub"""
-    # model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=True)
+    """ path: duong dan cua may giao vien toi file best.pt them 1 dau \ """
+    #model = torch.hub.load('ultralytics/yolov5', 'custom', path = "C:\\Traffic-Analysis\\Main File\\best.pt", force_reload=True) #truyền vào dường dẫn tuyệt đối của file best.pt thay vì dùng best.pt nhuw binhf thuonwgf sex khoong load dduowjc model
 except Exception as e:
     print(f"Lỗi khi tải mô hình YOLOv5: {e}")
 reader = Reader(['en'], gpu=False)

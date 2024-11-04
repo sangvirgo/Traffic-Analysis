@@ -12,19 +12,22 @@ class MainApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.cap = cv2.VideoCapture('../uploads/Le Van Viet.mp4')
+        """ path: duong dan cua may giao vien toi file uploads\\Le Van Viet.mp4"""
+        self.cap = cv2.VideoCapture('C:\\Traffic-Analysis\\uploads\\Le Van Viet.mp4')
 
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_frame)
         self.frame_skip = 0
         self.timer.start(10)
 
+
+        """ path: duong dan cua may giao vien toi cac file trong folder uploads """
         self.video_paths = {
-            "Lê Văn Việt": "../uploads/Le Van Viet.mp4",
-            "Võ Văn Ngân": "../uploads/Vo Van Ngan.mp4",
-            "Võ Văn Kiệt": "../uploads/Vo Van Kiet.mp4",
-            "Hai Bà Trưng": "../uploads/Hai Ba Trung.mp4",
-            "Võ Chí Công": "../uploads/Vo Chi Cong.mp4",
+            "Lê Văn Việt": "C:\\Traffic-Analysis\\uploads\\Le Van Viet.mp4",
+            "Võ Văn Ngân": "C:\\Traffic-Analysis\\uploads\\Vo Van Ngan.mp4",
+            "Võ Văn Kiệt": "C:\\Traffic-Analysis\\uploads\\Vo Van Kiet.mp4",
+            "Hai Bà Trưng": "C:\\Traffic-Analysis\\uploads\\Hai Ba Trung.mp4",
+            "Võ Chí Công": "C:\\Traffic-Analysis\\uploads\\Vo Chi Cong.mp4",
         }
 
         self.ui.locationComboBox.currentIndexChanged.connect(self.on_location_changed)
