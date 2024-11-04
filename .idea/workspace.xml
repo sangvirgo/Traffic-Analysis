@@ -7,9 +7,7 @@
     <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main File/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/trafficUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/trafficUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main File/trafficUI.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/trafficUI.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,6 +283,7 @@
       <workItem from="1730662728778" duration="729000" />
       <workItem from="1730665118822" duration="513000" />
       <workItem from="1730683870753" duration="9510000" />
+      <workItem from="1730730493064" duration="2590000" />
     </task>
     <servers />
   </component>
