@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1123</width>
+    <width>1230</width>
     <height>613</height>
    </rect>
   </property>
@@ -96,15 +96,20 @@
      <rect>
       <x>740</x>
       <y>50</y>
-      <width>381</width>
+      <width>481</width>
       <height>511</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="textHistory">
     <property name="geometry">
      <rect>
-      <x>880</x>
+      <x>950</x>
       <y>0</y>
       <width>121</width>
       <height>51</height>
@@ -130,7 +135,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1123</width>
+     <width>1230</width>
      <height>26</height>
     </rect>
    </property>

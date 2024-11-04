@@ -31,7 +31,7 @@ except Exception as e:
 
 try:
     """truyen vao custom model(yolov5) best.pt bang load cuar torch.hub"""
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=True)
+    # model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=True)
 except Exception as e:
     print(f"Lỗi khi tải mô hình YOLOv5: {e}")
 reader = Reader(['en'], gpu=False)
@@ -127,8 +127,7 @@ def xuatloi(frame, main_app):
 
         if check_vuotdendo(frame, results):
             bienso = docBienSo(frame)
-
-            if bienso is None:
+            if bienso is None or bienso is not None:
                 bienso = ""
             temp = bienso + " vượt đèn đỏ"
             for det in results.xyxy[0]:
@@ -138,12 +137,12 @@ def xuatloi(frame, main_app):
                     now = datetime.now()
                     tm = now.strftime("%H:%M:%S")
                     # vd: 20:21:36
-                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                    main_app.log_message(f"Đã phát hiện lỗi{temp} vào lúc {tm}")
                     # Đã phát hiện lỗi vuot den do vào lúc 20:21:36
 
         if check_mubh(frame, results):
             bienso = docBienSo(frame)
-            if bienso is None:
+            if bienso is None or bienso is not None:
                 bienso = ""
             temp = bienso + " không đội mũ bảo hiểm"
             for det in results.xyxy[0]:
@@ -152,11 +151,11 @@ def xuatloi(frame, main_app):
                     save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
                     now = datetime.now()
                     tm = now.strftime("%H:%M:%S")
-                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                    main_app.log_message(f"Đã phát hiện lỗi{temp} vào lúc {tm}")
 
         if bocdau(frame, results):
             bienso = docBienSo(frame)
-            if bienso is None:
+            if bienso is None or bienso is not None:
                 bienso = ""
             temp = bienso + " bốc đầu"
             for det in results.xyxy[0]:
@@ -165,7 +164,7 @@ def xuatloi(frame, main_app):
                     save_violation_bbox(Image.fromarray(frame), (x1, y1, x2, y2), temp)
                     now = datetime.now()
                     tm = now.strftime("%H:%M:%S")
-                    main_app.log_message(f"Đã phát hiện lỗi {temp} vào lúc {tm}")
+                    main_app.log_message(f"Đã phát hiện lỗi{temp} vào lúc {tm}")
 
     except Exception as e:
         main_app.log_message(f"Lỗi khi xuất lỗi vi phạm: {e}")

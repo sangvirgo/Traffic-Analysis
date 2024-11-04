@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 torch
 opencv-python
-=======
 uuid
->>>>>>> origin/son
-Pillow
+pillow
 numpy
 easyocr
-opencv-python
-torch
 pathlib
-PyQt5==5.15.11
+pyqt5==5.15.11

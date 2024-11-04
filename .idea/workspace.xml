@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="" />
+    <list default="true" id="0a840465-201b-4bd9-862a-87cf64b482e8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/trafficUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/trafficUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main File/trafficUI.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Main File/trafficUI.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +88,7 @@
       <recent name="D:\py traffic\testui\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.detect (1)">
+  <component name="RunManager" selected="Python.main (3)">
     <configuration name="detect (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py traffic" />
       <option name="ENV_FILES" value="" />
@@ -98,29 +104,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main File/detect.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="detect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py traffic" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Version Local" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Version Local/detect.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,6 +158,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py traffic" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Main File" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main File/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="trafficUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py traffic" />
       <option name="ENV_FILES" value="" />
@@ -200,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.detect (1)" />
         <item itemvalue="Python.main (3)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.detect (1)" />
         <item itemvalue="Python.trafficUI" />
         <item itemvalue="Python.main (2)" />
-        <item itemvalue="Python.detect" />
       </list>
     </recent_temporary>
   </component>
@@ -275,6 +281,10 @@
       <workItem from="1730617953429" duration="963000" />
       <workItem from="1730619319715" duration="9726000" />
       <workItem from="1730630211212" duration="62000" />
+      <workItem from="1730630481854" duration="4407000" />
+      <workItem from="1730662728778" duration="729000" />
+      <workItem from="1730665118822" duration="513000" />
+      <workItem from="1730683870753" duration="9510000" />
     </task>
     <servers />
   </component>
@@ -286,17 +296,17 @@
     <SUITE FILE_PATH="coverage/py_traffic$Test.coverage" NAME="Test Coverage Results" MODIFIED="1729409422882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testui" />
     <SUITE FILE_PATH="coverage/py_traffic$MainTestUITraffic.coverage" NAME="MainTestUITraffic Coverage Results" MODIFIED="1729501385930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testui" />
     <SUITE FILE_PATH="coverage/py_traffic$Create_API.coverage" NAME="Create API Coverage Results" MODIFIED="1729502045208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
-    <SUITE FILE_PATH="coverage/py_traffic$test.coverage" NAME="test Coverage Results" MODIFIED="1729502390858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
+    <SUITE FILE_PATH="coverage/py_traffic$test.coverage" NAME="test Coverage Results" MODIFIED="1730665407243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1730391718298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
     <SUITE FILE_PATH="coverage/py_traffic$detect.coverage" NAME="detect Coverage Results" MODIFIED="1730363450740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version Local" />
     <SUITE FILE_PATH="coverage/py_traffic$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1729751877330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Version API" />
     <SUITE FILE_PATH="coverage/py_traffic$trafficUI.coverage" NAME="trafficUI Coverage Results" MODIFIED="1730475747722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$testTraffic.coverage" NAME="testTraffic Coverage Results" MODIFIED="1729394560628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/py_traffic$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1730623003486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
+    <SUITE FILE_PATH="coverage/py_traffic$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1730728965029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$main_1.coverage" NAME="main_1 Coverage Results" MODIFIED="1729393880892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test api" />
     <SUITE FILE_PATH="coverage/py_traffic$main.coverage" NAME="main Coverage Results" MODIFIED="1729395093494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test api" />
     <SUITE FILE_PATH="coverage/py_traffic$testMain.coverage" NAME="testMain Coverage Results" MODIFIED="1729416199947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testui" />
-    <SUITE FILE_PATH="coverage/py_traffic$detect__1_.coverage" NAME="detect (1) Coverage Results" MODIFIED="1730624756791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
+    <SUITE FILE_PATH="coverage/py_traffic$detect__1_.coverage" NAME="detect (1) Coverage Results" MODIFIED="1730634032912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main File" />
     <SUITE FILE_PATH="coverage/py_traffic$hihi.coverage" NAME="hihi Coverage Results" MODIFIED="1729394129616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
