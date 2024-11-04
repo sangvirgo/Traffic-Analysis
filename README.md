@@ -1,7 +1,6 @@
 # Traffic-Analysis
 
-Hệ Thống Phân Tích Giao Thông Tự Động: Phát Hiện Vi Phạm Giao Thông Qua Video
-1.Bài toán cần giải quyết
-Mô tả: Hiện nay giao thông đang là 1 vấn đề nhức nhối ở đất nước ta, những vụ tai nạn giao thông xảy ra liên tục và gây ra nhiều tình cảnh tang thương, éo le ở nhiều gia đình. Chính vì vậy, nhóm đã có cho mình 1 đề tài giúp cho bên phía cảnh sát giao thông có thể phát hiện ra những phương tiện vi phạm(bằng mắt thường có thể sót) thông qua 1 nút bấm. Các lỗi vi phạm có thể là: lấn làn, vượt đèn đỏ....
-Đầu vào: Đọc vào 1 video ghi lại cảnh giao thông từ các camera giám sát. Video có thể chứa nhiều yếu tố, nhiều loại phương tiện di chuyển trong các điều kiện khác nhau như trong đêm tối hay sáng. Tùy thuộc vào đó mà có thể xử lí hình ảnh và bắt được những hình ảnh vi phạm nội quy.
- Đầu ra: Danh sách các phương tiện vi phạm dưới dạng biển số, sau đó kèm theo là các lỗi vi phạm của phương tiện đó, xuất ra màn hình, giúp cho cảnh sát giao thông dễ dàng tra ra được chủ xe hay người điều khiển phương tiện là ai.
+Với hiện trạng ngày nay, có quá nhiều những tai nạn giao thông vô cùng thương tâm và thảm khốc diễn ra hàng ngày hàng giờ trước mặt chúng ta. Chính vì thế để có thể cải thiện bớt phần nào hậu quả trên, và góp phần giúp người dân có ý thức hơn khi tham gia giao thông, đồng thời hỗ trợ các cơ quan chức năng thuận tiện hơn trong việc truy bắt tội phạm, chúng em đã thiết kế ra 1 ứng dụng tên là Traffic Analysis. 
+
+
+link demo san pham: https://www.youtube.com/watch?v=Bg2sD-nE3jE
